@@ -2,6 +2,10 @@
 # https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/18-blocks/lessons/64-blocks-procs-lambdas
 # http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/
 
+# http://ruby-doc.org/core-2.3.0/Proc.html
+# http://ruby-doc.org/core-2.2.3/Kernel.html#method-i-proc
+# # http://ruby-doc.org/core-2.2.3/Kernel.html#method-i-lambda
+
 #**************************************************************#
 
 names = ['Pedro', 'Mario']
@@ -41,7 +45,7 @@ names.each(&p)
 
 sep
 
-#http://ruby-doc.org/core-2.2.3/Kernel.html#method-i-proc
+
 p = proc { |text| puts text }
 p.call('created using Kernel#proc method')
 names.each(&p)
@@ -67,7 +71,6 @@ p.call('hello', 'bye')    #no errors, prints hello and ignores bye
 
 section('Lambdas')
 
-# http://ruby-doc.org/core-2.2.3/Kernel.html#method-i-lambda
 l = lambda { |text| puts text }
 l.call('Declared using lambda{}')
 names.each(&l)
