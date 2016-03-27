@@ -1,5 +1,6 @@
 require_relative 'helpers'
 
+# http://ruby-doc.org/core-2.3.0/doc/syntax/precedence_rdoc.html
 
 header('Operators')
 

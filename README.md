@@ -30,26 +30,37 @@
 ------
 ## TODO
 
-- Operators
-- Operator precedence
 - Hash
 - Array
 - String
 - Enumerable/Enumerator
 - Methods
- - Splat operator
+- Splat operator
+
+
 
 -------
 
-## Puralsight notes
-- Dynamic typing and duck typing
-- Multi-paradigm
-- Reflection
-- Metaprogramming
+## Links
 
-```
-foo = 'text'
-foo.public_methods
-
-String.public_methods
-```
+- http://ruby-doc.org/core-2.3.0/doc/globals_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/keywords_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/marshal_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/standard_library_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/regexp_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/modules_and_classes_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/assignment_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/control_expressions_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/precedence_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/methods_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/calling_methods_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/exceptions_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/literals_rdoc.html
+- http://ruby-doc.org/core-2.3.0/doc/syntax/miscellaneous_rdoc.html
+- http://ruby-doc.org/core-2.3.0/Object.html
+- http://ruby-doc.org/core-2.3.0/String.html
+- http://ruby-doc.org/core-2.3.0/Array.html
+- http://ruby-doc.org/core-2.3.0/Hash.html
+- http://ruby-doc.org/core-2.3.0/Range.html
+- http://ruby-doc.org/core-2.3.0/Proc.html
+- http://ruby-doc.org/core-2.3.0/Exception.html
