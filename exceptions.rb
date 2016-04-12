@@ -32,6 +32,7 @@ end
 
 separator
 
+# I  can raise an error
 def my_second_method
   raise 'What an error!'
 end
@@ -44,6 +45,7 @@ end
 
 separator
 
+# I can specify the error type when I raise an error
 def my_third_method
   raise ArgumentError, 'What an argument error!'
 end
@@ -64,3 +66,41 @@ rescue
 end
 
 separator
+
+# rescue/else/ensure
+def rescue_else_ensure
+  3/1
+rescue
+  puts 'Something went wrong'
+else
+  puts 'great! not errors.'
+ensure
+  puts 'Cleaning up everything!'
+end
+
+puts rescue_else_ensure
+
+separator
+
+# retry is useful for example if you are calling a API that usually fails
+def rescue_retry
+  3/0
+rescue Exception => e
+  attemps ||= 0
+  attemps += 1
+
+  if attemps < 3
+    puts e.message + '. Retrying'
+    # retry returns the execution to the beginning of the method
+    retry
+  else
+    puts 'No way! It failed'
+    raise
+  end
+end
+
+begin
+  puts rescue_retry
+rescue
+  puts 'retry failed'
+end

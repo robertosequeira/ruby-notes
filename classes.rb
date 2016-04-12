@@ -69,13 +69,13 @@ headline('Accessing private methods')
 begin
   puts spaceship.my_private_method
 rescue NoMethodError => ex
-  puts ex.message     #private method `my_private_method' called for #<Spaceship:0x00000001681b58>
+  puts ex.message     # private method `my_private_method' called for #<Spaceship:0x00000001681b58>
 end
 
 begin
   puts spaceship.second_private_method
 rescue NoMethodError => ex
-  puts ex.message     #private method `second_private_method' called for #<Spaceship:0x000000012f0f48>
+  puts ex.message     # private method `second_private_method' called for #<Spaceship:0x000000012f0f48>
 end
 
 # But I can call private method by using .send
@@ -91,7 +91,7 @@ headline('Private class methods')
 begin
   puts Spaceship.my_second_class_method
 rescue NoMethodError => ex
-  puts ex.message     #private method `my_second_class_method' called for Spaceship:Class
+  puts ex.message     # private method `my_second_class_method' called for Spaceship:Class
 end
 
 # But I can call a private class method by using .send
@@ -106,7 +106,7 @@ puts SpritelySpaceship.new.test_protected_method
 begin
   puts spaceship.my_protected_method
 rescue NoMethodError => ex
-  puts ex.message     #protected method `my_protected_method' called for #<Spaceship:0x000000021f4f58
+  puts ex.message     # protected method `my_protected_method' called for #<Spaceship:0x000000021f4f58
 end
 
 # But I can call a protected method by using .send
@@ -126,7 +126,7 @@ puts car.wheels
 begin
   puts car.how_many_wheels
 rescue NoMethodError => ex
-  puts ex.message     #undefined method `how_many_wheels' for #<Car:0x000000015bd410>
+  puts ex.message     # undefined method `how_many_wheels' for #<Car:0x000000015bd410>
 end
 
 separator

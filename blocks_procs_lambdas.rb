@@ -51,14 +51,14 @@ def return_from_proc
   'we just returned from the calling method'
 end
 
-puts return_from_proc     #Prints 'we just returned from the block'
+puts return_from_proc     # Prints 'we just returned from the block'
 
 headline('Procs do not validate parameters')
 
 p = proc { |text| puts text }
-p.call                    #no errors, no print
-p.call('hello')           #no errors, prints hello
-p.call('hello', 'bye')    #no errors, prints hello and ignores bye
+p.call                    # no errors, no print
+p.call('hello')           # no errors, prints hello
+p.call('hello', 'bye')    # no errors, prints hello and ignores bye
 
 #**************************************************************#
 
@@ -83,14 +83,14 @@ def return_from_lambda
   return 'we just returned from the calling method'
 end
 
-puts return_from_lambda         #Prints 'we just returned from the calling method'
+puts return_from_lambda         # Prints 'we just returned from the calling method'
 
 separator
 
 l = lambda { |text| puts text }
 
 begin
-  l.call                        #ArgumentError: wrong number of arguments (0 for 1)
+  l.call                        # ArgumentError: wrong number of arguments (0 for 1)
 rescue ArgumentError => e
   puts e.message
 end
@@ -98,7 +98,7 @@ end
 l.call('hello')
 
 begin
-  l.call('hello', 'welcome')    #ArgumentError: wrong number of arguments (2 for 1)
+  l.call('hello', 'welcome')    # ArgumentError: wrong number of arguments (2 for 1)
 rescue ArgumentError => e
   puts e.message
 end

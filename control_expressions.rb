@@ -1,6 +1,6 @@
 require_relative 'helpers'
 
-#http://ruby-doc.org/core-2.3.0/doc/syntax/control_expressions_rdoc.html
+# http://ruby-doc.org/core-2.3.0/doc/syntax/control_expressions_rdoc.html
 
 header('Conditional branching')
 
@@ -39,7 +39,7 @@ name = nil
 puts (name and name.upcase and name.reverse)      #
 
 name = 'Roberto'
-puts (name and name.upcase and name.reverse)      #otreboR
+puts (name and name.upcase and name.reverse)      # otreboR
 
 headline('Unless')
 # Same as if but testing for false

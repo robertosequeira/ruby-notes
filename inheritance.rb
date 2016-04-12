@@ -26,13 +26,13 @@ class Truck < Vehicle
 end
 
 headline('Class variables')
-
-puts Vehicle.class_var            #4
-puts Car.class_var                #4
-puts Truck.class_var              #4
+# class variables are overwritten by child classes
+puts Vehicle.class_var            # 4
+puts Car.class_var                # 4
+puts Truck.class_var              # 4
 
 headline('Instance variables')
-
-puts Vehicle.instance_var            #2
-puts Car.instance_var                #3
-puts Truck.instance_var              #4
+# instance variables keep the right values defined by every class type
+puts Vehicle.instance_var            # 2
+puts Car.instance_var                # 3
+puts Truck.instance_var              # 4
