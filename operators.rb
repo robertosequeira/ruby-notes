@@ -55,3 +55,46 @@ puts username       #<struct name="Roberto">
 
 # Assignment
 # += -= *= /= %= **= &= |= ^= >>= <<=
+
+headline('Splat')
+
+# acumulates as many values as posible in a variable
+a, *b = [1, 2, 3, 4]
+p a                             # 1
+p b                             # [2, 3, 4]
+
+separator
+
+a, *b, c = [1, 2, 3,4 ]
+p a                             # 1
+p b                             # [2, 3]
+p c                             # 4
+
+separator
+
+a,b,c = *1..3
+puts a                             # 1
+puts b                             # 2
+puts c                             # 3
+
+separator
+
+first, _, _, last =   1, *[2, 3, 4]
+puts first                        # 1
+puts last                         # 4
+
+headline('On elements that has a to_a method')
+
+first, *, last =   1, *2..45
+puts first                        # 1
+puts last                         # 45
+
+separator
+
+r = (3..10)
+p [1, 2, *r]                      # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+separator
+
+h = {a: 'a', b: 'b'}
+p [*h]                            # [[:a, "a"], [:b, "b"]]
