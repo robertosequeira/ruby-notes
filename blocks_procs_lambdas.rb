@@ -32,8 +32,8 @@ receive_block(names) { |elements| elements.each { |e| puts "_#{e}_" } }
 header('Procs')
 
 headline('Proc creation')
-# Procs are objects
 
+# Procs are objects
 p = Proc.new { |text| puts text }
 p.call('Created using Proc.new')
 names.each(&p)
@@ -43,6 +43,13 @@ separator
 p = proc { |text| puts text }
 p.call('created using Kernel#proc method')
 names.each(&p)
+
+separator
+
+p.call('.call')
+p.yield('.yield')
+p.('.(...)')
+p['[...]']
 
 headline('Return within a proc')
 
@@ -65,6 +72,7 @@ p.call('hello', 'bye')    # no errors, prints hello and ignores bye
 header('Lambdas')
 
 headline('Lambda creation')
+
 l = lambda { |text| puts text }
 l.call('Declared using lambda{}')
 names.each(&l)

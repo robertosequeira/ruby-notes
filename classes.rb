@@ -131,6 +131,7 @@ end
 
 separator
 
+# open classes
 class Car
   def how_many_wheels
     "#{wheels} in total"
