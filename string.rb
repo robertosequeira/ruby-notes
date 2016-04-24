@@ -3,7 +3,8 @@ require_relative 'helpers'
 header('String')
 
 # Default encoding is UTF-8
-puts 'abc'.encoding     # UTF-8
+p 'abc'.encoding              # #<Encoding:UTF-8>
+puts 'abc'.encoding.name      # UTF-8
 
 headline('Define strings')
 
@@ -102,4 +103,15 @@ foo = 'hello test user'
 p foo.split                         # ["hello", "test", "user"]
 # a separator can be specified
 foo = 'hello,test,user'
-p foo.split(',')
+p foo.split(',')                    # ["hello", "test", "user"]
+
+separator
+
+puts 'hello'.delete 'l','lo'        # heo
+puts 'hello'.delete 'lo'            # he
+puts 'hello'.delete 'aeiou', '^e'   # hell
+puts 'hello'.delete 'ej-m'          # ho
+
+separator
+
+p 'a'.upto('d').to_a                # ["a", "b", "c", "d"]

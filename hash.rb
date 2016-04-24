@@ -27,5 +27,19 @@ separator
 h.each { |h| p h }                   # [:a, "a"] - [:b, "b"]
 h.each { |k, v| puts "#{k}: #{v}" }  # a: a - b: b
 
+separator
+
+h = {a: 'a', b: 'b'}
+
+puts h.has_key?(:a)                 # true
+puts h.key?(:a)                     # true
+puts h.has_value?('a')              # true
+puts h.value?('b')                  # true
+puts h.include?(:a)                 # true
+puts h.member?(:a)                  # true
+
+separator
+
+
 
 

@@ -27,18 +27,6 @@
   - Inheritance
   - mix-in
 
-------
-## TODO
-
-- Hash
-- Array
-- String
-- Enumerable/Enumerator
-- Methods
-- Splat operator
-
-
-
 -------
 
 ## Links
@@ -64,3 +52,12 @@
 - http://ruby-doc.org/core-2.3.0/Range.html
 - http://ruby-doc.org/core-2.3.0/Proc.html
 - http://ruby-doc.org/core-2.3.0/Exception.html
+
+---
+
+## TODO:
+
+- http://ruby-doc.org/core-2.3.0/IO.html
+- http://ruby-doc.org/core-2.3.0/Dir.html
+- http://ruby-doc.org/core-2.3.0/File.html
+- http://ruby-doc.org/stdlib-2.3.0/libdoc/net/http/rdoc/Net/HTTP.html
