@@ -48,7 +48,7 @@ headline('Case')
 
 text = 'foo'
 case text
-  when 'bar'
+  when 'bar', 'baz'
     puts 'bar'
   when 'foo'
     puts 'foo'
@@ -67,7 +67,6 @@ case
 end
 
 headline('while/until')
-
 
 continue_while = true
 
@@ -124,7 +123,6 @@ end
 separator
 
 %w(a b c).each {|i| puts i }
-
 
 headline('Loop flow')
 

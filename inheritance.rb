@@ -36,3 +36,20 @@ headline('Instance variables')
 puts Vehicle.instance_var            # 2
 puts Car.instance_var                # 3
 puts Truck.instance_var              # 4
+
+p Truck.ancestors                                   # [Truck, Vehicle, Object, Kernel, BasicObject]
+p Truck.superclass                                  # Vehicle
+p Truck.superclass.superclass                       # Object
+p Truck.superclass.superclass.superclass            # BasicObject
+p Truck.superclass.superclass.superclass.superclass # nil
+
+p String.ancestors                                  # [String, Comparable, Object, Kernel, BasicObject]
+p String.superclass                                 # Object
+p String.superclass.superclass                      # BasicObject
+p String.superclass.superclass.superclass           # nil
+
+
+p Array.ancestors                                  # [Array, Enumerable, Object, Kernel, BasicObject]
+p Array.superclass                                 # Object
+p Array.superclass.superclass                      # BasicObject
+p Array.superclass.superclass.superclass           # nil

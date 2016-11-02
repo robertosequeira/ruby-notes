@@ -23,9 +23,21 @@ def receive_block(elements)
 end
 
 
-receive_block(names)
+receive_block(names)  # Elements received: Pedro, Mario
+
 separator
+
 receive_block(names) { |elements| elements.each { |e| puts "_#{e}_" } }
+
+separator
+
+receive_block(names) do |elements|
+  elements.each { |e| puts "_#{e}_" }
+end
+
+# Elements received: Pedro, Mario
+# _Pedro_
+# _Mario_
 
 #**************************************************************#
 
@@ -46,10 +58,10 @@ names.each(&p)
 
 separator
 
-p.call('.call')
-p.yield('.yield')
-p.('.(...)')
-p['[...]']
+p.call('.call')       # .call
+p.yield('.yield')     # .yield
+p.('.(...)')          # .(...)
+p['[...]']            # [...]
 
 headline('Return within a proc')
 
@@ -83,6 +95,14 @@ separator
 l = ->(text){puts text}
 l.call('Declared using ->(){}')
 names.each(&l)
+
+separator
+
+l.call('.call')       # .call
+l.yield('.yield')     # .yield
+l.('.(...)')          # .(...)
+l['[...]']            # [...]
+
 
 headline('Return within a lambda')
 

@@ -16,7 +16,7 @@ puts 256_413  # 256413
 puts 0b1010   # 10
 
 # Regular expression
-p %r(\d+)
+p %r(\d+)     # /\d/
 
 # Arrays
 p %w(1\ array of words)       # ["1 array", "of", "words"]
