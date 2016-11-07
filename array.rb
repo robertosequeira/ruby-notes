@@ -146,14 +146,17 @@ p arr                             # [1, 2, 8, 9, 5]
 separator
 
 # append
-arr << 'a'
+arr = [1, 2]
+arr << 'a'                        # [1, 2, "a"]
 p arr                             # [1, 2, 8, 9, 5, "a"]
 
 separator
 
-# repetition, concat, difference
+# repetition
 p [1, 2] * 3                      # [1, 2, 1, 2, 1, 2]
+# concatenation
 p [1, 2] + [3, 4]                 # [1, 2, 3, 4]
+# difference
 p [1, 2, 3, 4, 2, 5] - [2, 5]     # [1, 3, 4]
 
 separator
@@ -162,7 +165,7 @@ separator
 p %w(a b c d e c) & %w(b c f)     # ["b", "c"]
 
 # union - joins 2 arrays, removes all duplicates and preserves original order
-p %w(a b c d) | %w(b d f g)
+p %w(a b c d) | %w(b d f g)       # ["a", "b", "c", "d", "f", "g"]
 
 
 p [1, 2] * ', '                   # "1, 2" - Similar to join
