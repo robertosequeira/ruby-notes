@@ -2,14 +2,13 @@ require_relative 'helpers'
 
 header('File')
 
-my_file = 'files/file.txt'
-my_directory = 'files'
 headline('Methods')
 
-puts File.absolute_path('file.txt', 'files')            # .../ruby-notes/files/file.txt
+puts File.absolute_path('file.txt', 'files')            # .../files/file.txt
 
 separator
 
+my_file = 'files/file.txt'
 # last access time
 puts File.atime(my_file)                                # 2016-04-24 14:48:52 -0600
 # puts File.birthtime(my_file)
@@ -34,9 +33,13 @@ puts File.dirname('/foo/bar/files/file.txt')            # /foo/bar/files
 
 separator
 
+my_file = 'files/file.txt'
+
 #File.delete(my_file)
 
 separator
+
+my_directory = 'files'
 
 puts File.file?(my_file)                                # true
 puts File.file?(my_directory)                           # false
@@ -59,10 +62,6 @@ puts File.join('foo', 'bar', 'files', 'file.txt')       # foo/bar/files/file.txt
 
 separator
 
-# File.link(my_file, my_file + '.txt')
-
-separator
-
 # w to create the file if it does not exists
 # r, r+, w, w+, a, a+
 file = File.new(File.join(my_directory,'file_creation.txt'), 'w')
@@ -73,13 +72,23 @@ separator
 
 puts File.owned?(my_file)                               # true
 puts File.readable?(my_file)                            # true
+puts File.executable?(my_file)                          # false
 
-separator
+headline('Links')
 
-File.symlink(File.absolute_path(my_file) , my_file + '.sym') unless File.exist?(my_file + '.sym')
-# name of the file refereced by given link
-puts File.readlink(my_file + '.sym')                    # .../ruby-notes/files/file.txt
+my_file = 'files/file.txt'
+
+File.delete(my_file + '.txt') if File.exist?(my_file + '.txt')
+File.link(my_file, my_file + '.txt')
+
+File.delete(my_file + '.sym') if File.symlink?(my_file + '.sym')
+File.symlink(my_file , my_file + '.sym')
+
+# name of the file referenced by given link
+puts File.readlink(my_file + '.sym')                    # .../files/file.txt
+
 puts File.symlink?(my_file)                             # false
+puts File.symlink?(my_file + '.txt')                    # false
 puts File.symlink?(my_file + '.sym')                    # true
 
 separator
@@ -94,9 +103,9 @@ p File.split('/foo/bar/files/file.txt')                 # ["/foo/bar/files", "fi
 separator
 
 stat = File.stat(my_file)
+p stat
 # <File::Stat dev=0x801, ino=14420746, mode=0100644, nlink=1, uid=1000, gid=1000, rdev=0x0, size=452,
 # blksize=4096, blocks=8, atime=2016-04-24 16:18:09 -0600, mtime=2016-04-24 15:12:28 -0600, ctime=2016-04-24 15:57:26 -0600>
-p stat
 puts stat.atime
 puts stat.ctime
 puts stat.mtime
@@ -125,7 +134,15 @@ puts File.read(my_file)
 separator
 
 # when a block is used the file is automatically closed
-File.read(my_file).lines.each { |line| puts line}
+my_file = 'files/file.txt'
+
+File.open(my_file).each do |line|
+ puts line
+end
+
+File.open(my_file) do |file|
+  file.each { |l| puts l}
+end
 
 headline('Readlines')
 

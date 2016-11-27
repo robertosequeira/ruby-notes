@@ -14,6 +14,7 @@ separator
 Dir.chdir('files')
 puts Dir.pwd                        # .../ruby-notes/files
 Dir.chdir('..')
+puts Dir.pwd                        # .../ruby-notes
 
 separator
 
@@ -23,16 +24,14 @@ Dir.chdir('..') do
 end
 puts Dir.pwd                        # .../ruby-notes
 
-# Throwns an excetion if the directory is non empty
-# Dir.delete('foo')
-
 separator
+
+my_dir = 'files'
 
 p Dir.entries(my_dir)             # ["file.txt", "zero_file.txt", "file_2.txt", "file.txt.sym", "file_creation.txt", "..", "."]
 
 separator
 
-p Dir.exist?(my_dir)              # true
 
 separator
 
@@ -45,11 +44,14 @@ Dir.new(my_dir).each { |entry| puts entry} # file.txt - zero_file.txt - file_2.t
 
 separator
 
+p Dir.exist?(my_dir)              # true
+
 puts Dir.home                     # /home/roberto
 
 separator
 
 Dir.mkdir('my_dir')
+# Throws an exception if the directory is non empty
 Dir.delete('my_dir')
 
 separator

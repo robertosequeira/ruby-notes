@@ -79,17 +79,19 @@ ensure
 end
 
 puts rescue_else_ensure
+# great! not errors.
+# Cleaning up everything!
 
 separator
 
-# retry is useful for example if you are calling a API that usually fails
+# retry is useful for example if you are calling an API that usually fails
 def rescue_retry
   3/0
 rescue Exception => e
-  attemps ||= 0
-  attemps += 1
+  attempts ||= 0
+  attempts += 1
 
-  if attemps < 3
+  if attempts < 3
     puts e.message + '. Retrying'
     # retry returns the execution to the beginning of the method
     retry

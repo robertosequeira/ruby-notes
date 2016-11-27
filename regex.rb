@@ -59,4 +59,4 @@ headline('Scan')
 p 'Time is 7:07pm'.scan(/\d+/)    # ["7", "07"]
 
 # \1 \2 and refer to capture groups from the regular expression
-puts 'Roberto Sequeira'.gsub(/(\w+) (\w+)/, '\2, \1')     # Sequeira, Roberto
+puts 'Foo Bar'.gsub(/(\w+) (\w+)/, '\2, \1')     # Bar, Foo
