@@ -8,6 +8,11 @@ headline('FixNum and BigNum')
 puts Fixnum.superclass            # Integer
 puts Bignum.superclass            # Integer
 
+puts 1.class                        # Fixnum
+puts 1.size                         # 8
+puts 12345678901234567890.class     # Bignum
+puts 12345678901234567890.size      # 8
+
 headline('methods')
 
 4.upto(6) { |i| puts i }          # 4 - 5 - 6

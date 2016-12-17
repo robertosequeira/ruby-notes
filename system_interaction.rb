@@ -17,10 +17,10 @@ headline('Backticks')
 # http://ruby-doc.org/core-2.3.0/Kernel.html#method-i-60
 # Returns the standard output of running a command in a subshell
 puts `date`
-puts $?
+puts $?           # pid 10081 exit 0
 
 separator
 
-puts %x(ls)
-puts $?
+puts %x(date)
+puts $?           # pid 10082 exit 0
 
